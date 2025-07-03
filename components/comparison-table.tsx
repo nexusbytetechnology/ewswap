@@ -21,12 +21,12 @@ export default function ComparisonTable() {
 
   return (
     <section className="py-5 bg-light" aria-label="Rent vs Buy Comparison for Electric Scooters Sydney" ref={ref}>
-      <div className="container">
+      <div className="container-fluid">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-5"
+          className="text-center mb-4 mb-md-5"
         >
           <h2 className="display-4 fw-bold mb-3" style={{ color: "#000000" }}>
             Rent vs Buy: What's Right for You?
@@ -42,26 +42,26 @@ export default function ComparisonTable() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="row justify-content-center"
         >
-          <div className="col-lg-10">
+          <div className="col-12 col-xl-10">
             <div className="table-responsive">
-              <table className="table table-borderless bg-white rounded shadow-sm overflow-hidden">
+              <table className="table table-borderless bg-white rounded shadow-sm overflow-hidden table-mobile">
                 <thead style={{ backgroundColor: "#F37002" }}>
                   <tr>
-                    <th className="py-4 px-4 text-white fw-bold">Feature</th>
-                    <th className="py-4 px-4 text-white fw-bold text-center">Rent</th>
-                    <th className="py-4 px-4 text-white fw-bold text-center">Buy</th>
+                    <th className="py-3 py-md-4 px-3 px-md-4 text-white fw-bold">Feature</th>
+                    <th className="py-3 py-md-4 px-3 px-md-4 text-white fw-bold text-center">Rent</th>
+                    <th className="py-3 py-md-4 px-3 px-md-4 text-white fw-bold text-center">Buy</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparisonData.map((row, index) => (
                     <tr key={index} className={index % 2 === 0 ? "bg-light" : "bg-white"}>
-                      <td className="py-3 px-4 fw-semibold" style={{ color: "#000000" }}>
+                      <td className="py-2 py-md-3 px-3 px-md-4 fw-semibold" style={{ color: "#000000" }}>
                         {row.feature}
                       </td>
-                      <td className="py-3 px-4 text-center" style={{ color: "#606060" }}>
+                      <td className="py-2 py-md-3 px-3 px-md-4 text-center" style={{ color: "#606060" }}>
                         {row.rent}
                       </td>
-                      <td className="py-3 px-4 text-center" style={{ color: "#606060" }}>
+                      <td className="py-2 py-md-3 px-3 px-md-4 text-center" style={{ color: "#606060" }}>
                         {row.buy}
                       </td>
                     </tr>
