@@ -22,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--eswap-white);
   color: var(--eswap-black);
-  padding-top: 100px; /* Account for fixed header */
+  padding-top: 80px;
 }
 
 /* Custom Bootstrap overrides */
@@ -46,7 +46,7 @@ body {
 
 /* Header specific styles */
 header {
-  min-height: 80px;
+  min-height: 70px;
 }
 
 /* Smooth animations */
@@ -80,37 +80,6 @@ header {
   border-top: 1px solid #dee2e6;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .display-2 {
-    font-size: 2.5rem;
-  }
-
-  .display-4 {
-    font-size: 2rem;
-  }
-
-  .lead {
-    font-size: 1.1rem;
-  }
-}
-
-/* Loading animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -131,7 +100,7 @@ header {
 
 /* Ensure proper spacing for fixed header */
 section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 80px;
 }
 
 /* Better button styling */
@@ -143,4 +112,571 @@ section {
 /* Transition utilities */
 .transition-all {
   transition: all 0.3s ease;
+}
+
+/* Responsive breakpoints - Mobile first approach */
+/* 10" screens are typically around 1024px width */
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .display-1 {
+    font-size: 2rem;
+  }
+
+  .display-2 {
+    font-size: 1.8rem;
+  }
+
+  .display-3 {
+    font-size: 1.6rem;
+  }
+
+  .display-4 {
+    font-size: 1.4rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .btn-lg {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .container-fluid {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .mb-5 {
+    margin-bottom: 2rem !important;
+  }
+
+  .mt-5 {
+    margin-top: 2rem !important;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .display-2 {
+    font-size: 2.2rem;
+  }
+
+  .display-4 {
+    font-size: 1.6rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) - Force mobile layout for screens under 10" (1024px) */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  /* Force mobile layout for tablets under 10" */
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .col-xl-1,
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-4,
+  .col-xl-5,
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-8,
+  .col-xl-9,
+  .col-xl-10,
+  .col-xl-11,
+  .col-xl-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .d-lg-none {
+    display: block !important;
+  }
+
+  .d-lg-flex {
+    display: none !important;
+  }
+
+  .d-lg-block {
+    display: none !important;
+  }
+
+  .d-xl-none {
+    display: block !important;
+  }
+
+  .d-xl-flex {
+    display: none !important;
+  }
+
+  .d-xl-block {
+    display: none !important;
+  }
+
+  .order-lg-1,
+  .order-lg-2 {
+    order: 0;
+  }
+
+  .text-lg-start,
+  .text-lg-end {
+    text-align: center !important;
+  }
+
+  .display-2 {
+    font-size: 2.8rem;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+  }
+
+  .container-fluid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Large devices (desktops, 1024px and up) - 10" and larger screens */
+@media (min-width: 1024px) {
+  .display-2 {
+    font-size: 3.5rem;
+  }
+
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+  }
+
+  .container-fluid {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* XXL devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Mobile-specific adjustments for screens under 10" (1024px) */
+@media (max-width: 1023.98px) {
+  /* Hero section mobile adjustments */
+  .hero-mobile {
+    min-height: 70vh !important;
+    padding-top: 80px !important;
+  }
+
+  /* Card spacing for mobile */
+  .card-mobile {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Button adjustments for mobile */
+  .btn-mobile {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Text alignment for mobile */
+  .text-mobile-center {
+    text-align: center !important;
+  }
+
+  /* Padding adjustments for mobile */
+  .p-mobile-3 {
+    padding: 1rem !important;
+  }
+
+  /* Image responsive adjustments */
+  .img-mobile {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  /* Table responsive */
+  .table-mobile {
+    font-size: 0.875rem;
+  }
+
+  .table-mobile th,
+  .table-mobile td {
+    padding: 0.5rem;
+  }
+
+  /* Map adjustments for mobile */
+  .map-mobile {
+    height: 300px !important;
+  }
+
+  /* Station list mobile */
+  .station-mobile {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+
+  /* FAQ mobile adjustments */
+  .faq-mobile {
+    font-size: 0.9rem;
+  }
+
+  /* Footer mobile adjustments */
+  .footer-mobile {
+    text-align: center;
+  }
+
+  .footer-mobile .col-lg-2,
+  .footer-mobile .col-lg-4 {
+    margin-bottom: 2rem;
+  }
+
+  /* Force single column layout */
+  .row > [class*="col-"] {
+    margin-bottom: 1rem;
+  }
+
+  /* Responsive text sizing */
+  h1,
+  .h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+
+  h2,
+  .h2 {
+    font-size: calc(1.325rem + 0.9vw);
+  }
+
+  h3,
+  .h3 {
+    font-size: calc(1.3rem + 0.6vw);
+  }
+
+  h4,
+  .h4 {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+
+  /* Responsive spacing */
+  .py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .mb-5 {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .mt-5 {
+    margin-top: 2.5rem !important;
+  }
+}
+
+/* Landscape phone adjustments */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .hero-mobile {
+    min-height: 50vh !important;
+  }
+
+  .py-5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .img-fluid {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .card:hover {
+    transform: none;
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  /* Increase touch targets */
+  .btn {
+    min-height: 44px;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Better touch spacing */
+  .btn-link {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .fixed-top {
+    position: static !important;
+  }
+
+  .btn {
+    display: none !important;
+  }
+
+  .bg-dark {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-body-bg: #121212;
+    --bs-body-color: #ffffff;
+  }
+}
+
+/* Focus styles for accessibility */
+.btn:focus,
+.nav-link:focus,
+.accordion-button:focus {
+  outline: 2px solid var(--eswap-orange);
+  outline-offset: 2px;
+}
+
+/* Loading animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Utility classes for responsive design */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 1023.98px) {
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Responsive grid system override for screens under 10" */
+@media (max-width: 1023.98px) {
+  .container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .row > * {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* Responsive images */
+@media (max-width: 1023.98px) {
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .rounded-4 {
+    border-radius: 1rem !important;
+  }
+
+  .shadow-lg {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+/* Responsive typography improvements */
+@media (max-width: 1023.98px) {
+  .display-1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .display-2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .display-3 {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    line-height: 1.3;
+  }
+
+  .display-4 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.3;
+  }
+
+  .lead {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.6;
+  }
+
+  p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.6;
+  }
+}
+
+/* Responsive button improvements */
+@media (max-width: 1023.98px) {
+  .btn-lg {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    padding: clamp(0.6rem, 2vw, 0.75rem) clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .btn {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(1rem, 3vw, 1.5rem);
+  }
+}
+
+/* Responsive spacing system */
+@media (max-width: 1023.98px) {
+  .py-1 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .py-2 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .py-3 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .py-4 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .py-5 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .mb-1 {
+    margin-bottom: 0.5rem !important;
+  }
+  .mb-2 {
+    margin-bottom: 1rem !important;
+  }
+  .mb-3 {
+    margin-bottom: 1.5rem !important;
+  }
+  .mb-4 {
+    margin-bottom: 2rem !important;
+  }
+  .mb-5 {
+    margin-bottom: 2.5rem !important;
+  }
+
+  .mt-1 {
+    margin-top: 0.5rem !important;
+  }
+  .mt-2 {
+    margin-top: 1rem !important;
+  }
+  .mt-3 {
+    margin-top: 1.5rem !important;
+  }
+  .mt-4 {
+    margin-top: 2rem !important;
+  }
+  .mt-5 {
+    margin-top: 2.5rem !important;
+  }
 }
