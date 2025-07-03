@@ -60,12 +60,12 @@ export default function FAQ() {
       aria-label="Frequently Asked Questions about eSwap Electric Scooter Rentals"
       ref={ref}
     >
-      <div className="container">
+      <div className="container-fluid">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-5"
+          className="text-center mb-4 mb-md-5"
         >
           <h2 className="display-4 fw-bold mb-3" style={{ color: "#000000" }}>
             Frequently Asked Questions
@@ -76,7 +76,7 @@ export default function FAQ() {
         </motion.div>
 
         <div className="row justify-content-center">
-          <div className="col-lg-8">
+          <div className="col-12 col-xl-8">
             <div className="accordion" id="faqAccordion">
               {faqs.map((faq, index) => (
                 <motion.div
@@ -88,7 +88,7 @@ export default function FAQ() {
                 >
                   <h3 className="accordion-header">
                     <button
-                      className="accordion-button collapsed fw-semibold border-0 rounded"
+                      className="accordion-button collapsed fw-semibold border-0 rounded faq-mobile"
                       type="button"
                       onClick={() => setOpenIndex(openIndex === index ? null : index)}
                       aria-expanded={openIndex === index}
@@ -96,13 +96,15 @@ export default function FAQ() {
                         backgroundColor: "white",
                         color: "#000000",
                         boxShadow: "none",
+                        minHeight: "44px",
+                        padding: "1rem",
                       }}
                     >
-                      {faq.question}
+                      <span className="flex-grow-1 text-start">{faq.question}</span>
                       {openIndex === index ? (
-                        <ChevronUp className="ms-auto" size={20} style={{ color: "#F37002" }} />
+                        <ChevronUp className="ms-2 flex-shrink-0" size={20} style={{ color: "#F37002" }} />
                       ) : (
-                        <ChevronDown className="ms-auto" size={20} style={{ color: "#F37002" }} />
+                        <ChevronDown className="ms-2 flex-shrink-0" size={20} style={{ color: "#F37002" }} />
                       )}
                     </button>
                   </h3>
@@ -115,7 +117,7 @@ export default function FAQ() {
                         transition={{ duration: 0.3 }}
                         className="accordion-collapse"
                       >
-                        <div className="accordion-body pt-0" style={{ color: "#606060" }}>
+                        <div className="accordion-body pt-0 px-4 pb-4 faq-mobile" style={{ color: "#606060" }}>
                           {faq.answer}
                         </div>
                       </motion.div>
