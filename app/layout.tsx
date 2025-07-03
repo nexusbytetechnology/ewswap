@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "eSwap - Electric Scooter & E-Bike Rentals Sydney",
   description: "Revolutionary battery swap technology for electric scooters and e-bikes in Sydney",
-    generator: 'v0.dev'
+    developer: 'Laith Alawneh'
 }
 
 export default function RootLayout({
