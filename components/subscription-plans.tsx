@@ -58,17 +58,17 @@ export default function SubscriptionPlans() {
 
   return (
     <section
-      id="plans"
+      id="pricing"
       className="py-5"
       aria-label="eSwap Subscription Plans for Electric Scooter Rentals Sydney"
       ref={ref}
     >
-      <div className="container">
+      <div className="container-fluid">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-5"
+          className="text-center mb-4 mb-md-5"
         >
           <h2 className="display-4 fw-bold mb-3" style={{ color: "#000000" }}>
             Choose Your Sydney Mobility Plan
@@ -78,14 +78,14 @@ export default function SubscriptionPlans() {
           </p>
         </motion.div>
 
-        <div className="row g-4 justify-content-center">
+        <div className="row g-3 g-md-4 justify-content-center">
           {plans.map((plan, index) => (
-            <div key={index} className="col-lg-4">
+            <div key={index} className="col-12 col-md-6 col-xl-4">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`card h-100 shadow-sm border-0 position-relative ${plan.popular ? "border-warning" : ""}`}
+                className={`card h-100 shadow-sm border-0 position-relative card-mobile ${plan.popular ? "border-warning" : ""}`}
                 style={plan.popular ? { borderWidth: "2px", borderColor: "#F37002" } : {}}
               >
                 {plan.popular && (
@@ -98,7 +98,7 @@ export default function SubscriptionPlans() {
                   </div>
                 )}
 
-                <div className="card-body text-center p-4 d-flex flex-column">
+                <div className="card-body text-center p-3 p-md-4 d-flex flex-column">
                   <h3 className="card-title h4 fw-bold mb-3" style={{ color: "#000000" }}>
                     {plan.name}
                   </h3>
@@ -114,7 +114,7 @@ export default function SubscriptionPlans() {
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="d-flex align-items-center mb-2">
                         <Check size={16} className="me-2 flex-shrink-0" style={{ color: "#F37002" }} />
-                        <span style={{ color: "#606060" }}>{feature}</span>
+                        <span style={{ color: "#606060", fontSize: "0.9rem" }}>{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -122,7 +122,11 @@ export default function SubscriptionPlans() {
                   <div className="mt-auto">
                     <button
                       className={`btn w-100 fw-semibold ${plan.popular ? "text-white" : "btn-outline-dark"}`}
-                      style={plan.popular ? { backgroundColor: "#F37002", border: "none" } : {}}
+                      style={
+                        plan.popular
+                          ? { backgroundColor: "#F37002", border: "none", minHeight: "44px" }
+                          : { minHeight: "44px" }
+                      }
                     >
                       Get Started
                     </button>
